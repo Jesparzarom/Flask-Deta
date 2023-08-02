@@ -13,35 +13,35 @@ class DetaTemplate(ABC):
         project_key: Optional[str] = None,
         name: Optional[str] = None,
     ):
-        self.instance = self.__get_deta_instance__()
-        self.config = self.__get_config_name__()
-        self.type = self.__get_type_name__()
+        self.__instance__ = self.__get_deta_instance__()
+        self.__config__ = self.__get_config_name__()
+        self.__type__ = self.__get_type_name__()
 
-        self.app = app
+        self.__app__ = app
 
-        self.project_key = project_key or (app and app.config.get("DETA_PROJECT_KEY"))
+        self.__project_key__ = project_key or (app and app.config.get("DETA_PROJECT_KEY"))
 
-        self.name = name or (app and app.config.get(self.config))
+        self.__name = name or (app and app.config.get(self.__config__))
 
-        if not self.project_key:
-            raise ValueError(f"No project key provided for {self.type}")
+        if not self.__project_key__:
+            raise ValueError(f"No project key provided for {self.__type__}")
 
-        if not self.name:
-            raise ValueError(f"No {self.type.lower()} name provided for {self.type}")
+        if not self.__name:
+            raise ValueError(f"No {self.__type__.lower()} name provided for {self.__type__}")
 
         try:
-            self.deta = Deta(self.project_key)
+            self.__deta__ = Deta(self.__project_key__)
             setattr(
                 self,
-                self.type.upper(),
-                self.instance(self.name),
+                self.__type__.upper(),
+                self.__instance__(self.__name),
             )
         except Exception as e:
-            if self.app:
-                self.app.logger.error(
-                    f"Error connecting to {self.type.lower()} in Flask-Deta => deta.{self.type}(): {e}"
+            if self.__app__:
+                self.__app__.logger.error(
+                    f"Error connecting to {self.__type__.lower()} in Flask-Deta => deta.{self.__type__}(): {e}"
                 )
-            setattr(self, self.type.upper(), None)
+            setattr(self, self.__type__.upper(), None)
 
     @classmethod
     def __get_config_name__(cls):

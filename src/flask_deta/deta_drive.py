@@ -19,7 +19,7 @@ class DetaDrive(DetaTemplate):
             all_data = self.DRIVE.list()
             return all_data
         except Exception as e:
-            self.app.logger.error(f"Error fetching records: {e}")
+            self.__app__.logger.error(f"Error fetching records: {e}")
             return None
 
     def get(self, filename: str):
@@ -29,7 +29,7 @@ class DetaDrive(DetaTemplate):
             file = self.DRIVE.get(filename)
             return file
         except Exception as e:
-            self.app.logger.error(f"Error fetching records: {e}")
+            self.__app__.logger.error(f"Error fetching records: {e}")
             return None
 
     def save(
@@ -51,7 +51,7 @@ class DetaDrive(DetaTemplate):
             self.DRIVE.put(**config)
             return True
         except Exception as e:
-            self.app.logger.error(f"Error saving file: {e}")
+            self.__app__.logger.error(f"Error saving file: {e}")
             return None
 
 
