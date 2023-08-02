@@ -1,0 +1,3 @@
+class DetaModel:
+    pass
+
