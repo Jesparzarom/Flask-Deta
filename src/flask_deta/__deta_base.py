@@ -1,5 +1,5 @@
 from deta import Deta
-from .deta_setup import DetaTemplate
+from .__deta_setup import DetaTemplate
 
 
 class DetaBase(DetaTemplate):
@@ -108,7 +108,7 @@ class DetaBase(DetaTemplate):
         """Retrieves all data from the Deta database.
 
         Returns:
-            list | None: A list containing all the data from the database 
+            list | None: A list containing all the data from the database
             or None if the database is not available or an error occurs.
 
         Example:

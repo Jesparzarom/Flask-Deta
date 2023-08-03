@@ -1,0 +1,53 @@
+site_name: My Docs
+
+nav:
+  - Home: 'index.md'
+  - Usage: 'usage/usage.md'
+
+theme:
+  name: material
+
+  language: en
+
+  font:
+    text: Ubuntu
+    code: JetBrains Mono
+
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      primary: deep purple
+      accent: pink
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+    
+  features:
+    - navigation.footer
+
+plugins:
+  - search
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://www.google.com
+      name: Jesparzarom
+
+    - icon: fontawesome/brands/github
+      link: https://www.google.com
+
+    - icon: fontawesome/brands/github
+      link: https://www.google.com
+      
+copyright: Copyright &copy; 2023 J. Esparza
+

@@ -201,10 +201,10 @@ class DetaDrive:
             return None
         try:
             config = {
-                "name" : filename,
-                "data" : data,
-                "path" : file_path,
-                "content_type" : type
+                "name": filename,
+                "data": data,
+                "path": file_path,
+                "content_type": type,
             }
             self.DRIVE.put(**config)
             return True
@@ -213,27 +213,4 @@ class DetaDrive:
             return None
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+from src.flask_deta import det

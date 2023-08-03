@@ -1,4 +1,6 @@
-# Flask Deta
+# Usage
+
+---
 
 This is a simple guide on how to integrate Deta with your Flask application using the `flask-deta` package. DetaSpace is a cloud-based backend service that allows you to store and manage data in a scalable and efficient manner.
 

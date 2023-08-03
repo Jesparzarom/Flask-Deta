@@ -1,5 +1,3 @@
-from src.flask_deta.deta_base import DetaBase
-from src.flask_deta.deta_drive import DetaDrive
-from src.flask_deta.model import DetaModel
-
-
+from .__deta_base import DetaBase
+from .__deta_drive import DetaDrive
+from .__model import DetaModel
