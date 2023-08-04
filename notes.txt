@@ -1,0 +1,24 @@
+
+## Install
+```python
+pip install Deta-Flask
+```
+## Configuration
+First create an app flask instance, later set the parameters to connect your
+whit your DetaSpace collection's, finally create an instance of Base, Drive or both,
+whit `app` as a argument.
+
+```python
+from flask import Flask
+from deta_flask import DetaBase, DetaDrive
+
+app = Flask(__name__)
+
+app.config["DETA_PROJECT_KEY"] = "MyKey12345"
+app.config["DETA_DB_NAME"] = "products" # DetaSpace Base for data 
+app.config["DETA_DRIVE_NAME"] = "brands" # DetaSpace Drive for files
+
+db = DetaBase(app)
+drive = DetaDrive(app)
+```
+

@@ -1,3 +1,5 @@
+from typing import Optional, Union
+from datetime import datetime
 from deta import Deta
 from .__deta_setup import DetaTemplate
 
@@ -16,10 +18,10 @@ class DetaBase(DetaTemplate):
     # ========== OPERATIONS ==========
     def push(
         self,
-        data: dict[dict | list | tuple | int | str | bool],
-        key=None,
-        expire_in=None,
-        expire_at=None,
+        data: dict[Union[dict, list, tuple, int, str, bool]],
+        key: Optional[str] = None,
+        expire_in: Optional[int] = None,
+        expire_at: Optional[Union[int, float, datetime]] = None,
     ):
         """
         push (method) Store data in the Deta database.
@@ -76,7 +78,7 @@ class DetaBase(DetaTemplate):
             self.__app__.logger.error(f"Error creating record: {e}")
             return None
 
-    def get(self, key: str):
+    def get(self, key: str) -> Optional[dict]:
         """Retrieves data from the Deta BASE database using the provided key.
 
         Args:
@@ -104,7 +106,7 @@ class DetaBase(DetaTemplate):
             self.__app__.logger.error(f"Error getting record: {e}")
             return None
 
-    def get_all(self):
+    def get_all(self) -> Optional[list[dict]]:
         """Retrieves all data from the Deta database.
 
         Returns:
@@ -131,7 +133,9 @@ class DetaBase(DetaTemplate):
             self.__app__.logger.error(f"Error fetching records: {e}")
             return None
 
-    def edit(self, key: str, data: dict[dict | list | tuple | int | str | bool]):
+    def edit(
+        self, key: str, data: dict[Union[dict, list, tuple, int, str, bool]]
+    ) -> Optional[bool]:
         """Edit and updates data in the Deta BASE database using the provided key.
 
         Args:
@@ -160,7 +164,7 @@ class DetaBase(DetaTemplate):
             self.__app__.logger.error(f"Error updating record: {e}")
             return None
 
-    def remove(self, key: str):
+    def remove(self, key: str) -> Optional[bool]:
         """Remove/Deletes data from the Deta BASE database using the provided key.
 
         Args:

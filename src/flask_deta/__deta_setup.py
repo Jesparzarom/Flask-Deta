@@ -1,7 +1,6 @@
 import io
 from abc import ABC
 from typing import Optional
-
 from flask import Flask
 from deta import Deta
 
