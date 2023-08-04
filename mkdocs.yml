@@ -1,42 +1,52 @@
-site_name: My Docs
+#  SITE NAME
+site_name: Flask-Deta
 
+# NAVIGATION
 nav:
-  - Home: 'index.md'
-  - Usage: 'usage/usage.md'
+  - Introduction: 'index.md'
+  - Installation: 'Install/flaskdeta.md'
+  - DetaBase: 'DetaBase/Base.md'
 
+# THEME CONFIGURATIONS
 theme:
+  # NAME OF THEME
   name: material
-
+  # LANGUAGE
   language: en
 
+  highlightjs: true
+  hljs_style: base16-decaf
+  # FONTS
   font:
-    text: Ubuntu
-    code: JetBrains Mono
+    text: Fira Sans
+    code: Ubuntu Mono
+  # COLORS
 
   palette: 
-
     # Palette toggle for light mode
     - scheme: default
-      primary: deep purple
-      accent: pink
+      primary: pink
+      accent: deep purple
       toggle:
         icon: material/brightness-7 
         name: Switch to dark mode
-
     # Palette toggle for dark mode
     - scheme: slate
-      primary: deep purple
+      primary: pink
       accent: pink
       toggle:
         icon: material/brightness-4
-    
+  
+  # FEATURES
   features:
     - navigation.footer
+    - content.code.copy
 
+# PLUGINS FOR THE SITE
 plugins:
   - search
 
-
+# EXTRAS 
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -48,6 +58,16 @@ extra:
 
     - icon: fontawesome/brands/github
       link: https://www.google.com
-      
-copyright: Copyright &copy; 2023 J. Esparza
 
+      
+copyright: Copyright &copy; 2023 J.P. Esparza.
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences

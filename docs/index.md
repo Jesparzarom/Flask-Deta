@@ -1,57 +1,66 @@
-# DETA-FLASK
+# Introduction
 
-Deta-Flask is a Flask module that simplifies the integration of Deta.sh NoSQL database into Flask web applications. Deta.sh is a serverless database platform that allows easy and efficient data storage and retrieval.
+**😁Welcome to Flask-Deta documentation!**
 
-This package provides a straightforward and efficient interface to interact with Deta.sh in Flask applications, enabling you to focus on your projects without worrying about database management.
+Flask-Deta is a fantastic Python library that simplifies the integration of your [DetaSpace](https://deta.space/) collection of database and/or drive files with [Flask](https://flask.palletsprojects.com/en/2.3.x/), a popular web framework. 
+
+With Flask-Deta, you can effortlessly store and manage data with `DetaBase` and handle file storage operations with `DetaDrive`, all within the context of your Flask application. This robust combination allows you to leverage the secure and scalable cloud infrastructure of [DetaSpace](https://deta.space/), making data and file management for your web projects convenient and efficient. 
+
+In this comprehensive guide, we will provide you with an in-depth overview of Flask-Deta and help you get started using this extraordinary tool.
+
+> With DetaSpace's free cloud storage you can easily store and manage data and files in your Flask applications.
+
+
+## What is Flask-Deta?
+Flask-Deta is a library developed to streamline data and file storage and management in web applications created with Flask. By integrating DetaSpace Base and DetaSpace Drive with Flask, Flask-Deta enables you to leverage the secure and scalable infrastructure of Deta for your data and file storage needs in your web project.
 
 ## Key Features
+- **Simple Interface**: Flask-Deta provides a user-friendly and straightforward interface to interact with Deta Base and Deta Drive.
 
-- Easy integration of Deta.sh into Flask applications.
-- Optimized functions and methods for manipulating data in the NoSQL database.
-- Intuitive interface for efficient data storage and retrieval.
+- **Versatility**: With Flask-Deta, you can store and retrieve data from Deta Base, as well as upload, download, and delete files with Deta Drive.
 
-## Installation
+- **Quick Setup**: Configuring Flask-Deta in your Flask application is fast and direct, allowing you to focus on the development of your project.
 
-You can install Deta-Flask using pip:
+## User Guide
+For comprehensive information on how to use Flask-Deta, please refer to our User Guide, which covers the following topics: 
 
-```
-pip install deta-flask
-```
+- [Installation](./DetaBase/Base/)
+- [DetaBase](./DetaBase/Base/)
+- [DetaDrive](./DetaBase/Base/)
 
-## Usage
+For comprehensive information on how to use Flask-Deta, please refer to our User Guide, which covers the following topics:
 
-To get started with Deta-Flask in your Flask application, simply import the module and configure it with your Deta.sh project key:
+## Repository
 
-```python
-from flask import Flask
-from deta_flask import Deta
-
-app = Flask(__name__)
-deta = Deta("your_deta_project_key")
-
-# Now you are ready to work with Deta.sh in your Flask application.
-```
-
-Refer to the complete documentation for more details on how to use Deta-Flask in your project.
-
-## Contributing
-
-Your contribution is welcome and appreciated! If you wish to contribute to Deta-Flask, you can do the following:
-
-- Report issues or request new features through GitHub Issues.
-- Submit pull requests to improve existing code or add new functionalities.
-
-## Donate or Finance the Project
-
-If you find Deta-Flask helpful and would like to support its ongoing development, consider making a donation to help maintain the project. Your financial support enables us to continue improving and maintaining this package.
-
-- Donate through [donation link](https://link-to-donation-page.com)
-- Learn about other ways to collaborate on our website [collaboration page link](https://link-to-collaboration-page.com)
+Flask-Deta is open-source and welcomes contributions. If you find any issues or have ideas for improvements, feel free to open an issue on [GitHub](https://github.com/Jesparzarom/Flask-Deta).
 
 ## License
 
-Deta-Flask is distributed under the [MIT License](https://link-to-license). If you use this package, we encourage you to read the full license to understand the terms and conditions of use.
+Flask-Deta is licensed under the MIT License. See [LICENSE](./LICENSE) for more details.
+
+## Authors
+
+J.P. Esparza | [jesparzarom](https://github.com/Jesparzarom).
+
+
+## Sponsor the Project
+If you find Deta-Flask valuable and want to contribute to its continued development and maintenance, consider sponsoring the project. Your sponsorship will help support the developers' efforts to enhance the library, fix issues, and add new features.
+
+By sponsoring Deta-Flask, you ensure that it remains a reliable and powerful tool for integrating DetaSpace's collections functionalities with Flask.
+
+Your support is greatly appreciated and will contribute to the success and sustainability of the project. Together, we can make Deta-Flask even better!
 
 ---
 
-Thank you for choosing Deta-Flask! We hope it proves to be useful, and you enjoy using this module to work with Deta.sh NoSQL database in your Flask projects. If you have any questions or suggestions, feel free to reach out to us through GitHub. Happy coding!
+
+<a href="https://www.python.org/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" width=60/>
+</a>
+<a href="https://flask.palletsprojects.com/en/2.3.x/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" width=60/>
+</a>
+<a href="https://deta.space/" target="_blank">
+    <img src="https://deta.space/landing-page/assets/logo.20539aa2.svg" width=235/>
+</a>
+
+---
