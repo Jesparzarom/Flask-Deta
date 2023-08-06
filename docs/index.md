@@ -24,23 +24,32 @@ Flask-Deta is a library developed to streamline data and file storage and manage
 ## User Guide
 For comprehensive information on how to use Flask-Deta, please refer to our User Guide, which covers the following topics: 
 
-- [Installation](./DetaBase/Base/)
-- [DetaBase](./DetaBase/Base/)
-- [DetaDrive](./DetaBase/Base/)
+- [Installation](/Install/flaskdeta/)
+- [QuickStart](/QuickStart/start/)
+- [DetaBase](/DetaBase/Base/)
+- [DetaDrive](/DetaBase/Base/)
 
 For comprehensive information on how to use Flask-Deta, please refer to our User Guide, which covers the following topics:
 
-## Repository
+## Source Code
 
-Flask-Deta is open-source and welcomes contributions. If you find any issues or have ideas for improvements, feel free to open an issue on [GitHub](https://github.com/Jesparzarom/Flask-Deta).
+The **[source code](https://github.com/Jesparzarom/Flask-Deta)** of this project is available on GitHub and is open-source under the _BSD 3-Clause License_. We invite developers and contributors to explore the codebase. 
+
+> The codebase relies on the Flask and Deta libraries, which are essential components driving the functionality of this project.
+
+## Issues
+
+If you find any issues or have ideas for improvements, feel free to open an issue on [GitHub Repo/issues](https://github.com/Jesparzarom/Flask-Deta/issues/new).
 
 ## License
 
-Flask-Deta is licensed under the MIT License. See [LICENSE](./LICENSE) for more details.
+Flask-Deta is licensed under the BSD 3-Clause License. See [LICENSE](/LICENSE/) for more details.
+
+By using this project, you agree to abide by the terms of the BSD 3-Clause License. We encourage you to review the license for more details. This license ensures that this project remains open-source and freely accessible to the community, fostering collaboration and innovation.
 
 ## Authors
 
-J.P. Esparza | [jesparzarom](https://github.com/Jesparzarom).
+J.P. Esparza | [jesparzarom](https://github.com/Jesparzarom)
 
 
 ## Sponsor the Project
@@ -51,8 +60,6 @@ By sponsoring Deta-Flask, you ensure that it remains a reliable and powerful too
 Your support is greatly appreciated and will contribute to the success and sustainability of the project. Together, we can make Deta-Flask even better!
 
 ---
-
-
 <a href="https://www.python.org/" target="_blank">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" width=60/>
 </a>
@@ -62,5 +69,8 @@ Your support is greatly appreciated and will contribute to the success and susta
 <a href="https://deta.space/" target="_blank">
     <img src="https://deta.space/landing-page/assets/logo.20539aa2.svg" width=235/>
 </a>
+
+
+> In this project, we would like to extend our sincere appreciation to the creators and maintainers of the Flask and Deta libraries. Flask, a powerful web framework, has played a crucial role in the development of this project, while Deta, with its efficient data storage and management capabilities, has greatly contributed to its success. Without these remarkable open-source libraries and the efforts of their dedicated communities, this project would not have been possible. We express our gratitude to the Flask and Deta teams for their outstanding work, which has enriched the development experience and functionality of this project.
 
 ---

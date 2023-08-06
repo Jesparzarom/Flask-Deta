@@ -3,20 +3,43 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "Flask-Deta"
-version = "0.0.1"
-authors = [
-  { name="jesparzarom", email="jesparzarom@outlook.com" },
-]
-description = "A small example package"
+name = "flask-deta"
+version = "0.1.1"
+description = "A Python library for seamless integration with DetaSpace in Flask"
+authors = [{ name = "J.P. Esparza" }]
+maintainers = [{ name = "J.P. Esparza" }]
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.8"
+dependencies = ["Flask", "deta"]
+keywords = [
+  "Flask",
+  "Flask Package",
+  "Flask NoSQL",
+  "Fask Deta",
+  "Deta",
+  "Detaspace",
+  "Python Deta",
+  "NoSQL",
+  "Drive",
+  "Databases",
+  "Web Development",
+]
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: BSD License",
+  "Operating System :: Microsoft",
+  "Operating System :: POSIX",
+  "Operating System :: MacOS",
+  "Intended Audience :: End Users/Desktop",
+  "Intended Audience :: Developers",
+  "Framework :: Flask",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+  "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 
+
 [project.urls]
-"Homepage" = "https://github.com/pypa/flask-detaspace"
-"Bug Tracker" = "https://github.com/pypa/flask-detaspace/issues"
+"Homepage" = "https://github.com/Jesparzarom/Flask-Deta"
+"Source Code" = "https://github.com/Jesparzarom/Flask-Deta"
+"Bug Tracker" = "https://github.com/Jesparzarom/Flask-Deta/issues"

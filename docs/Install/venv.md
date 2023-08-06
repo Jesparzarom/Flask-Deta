@@ -34,4 +34,4 @@ source myenv/bin/activate
 ```
 Creating a virtual environment allows you to keep your project dependencies separate from the global Python installation, providing a clean and isolated environment for your project. It is highly recommended to use virtual environments for Python projects to avoid conflicts between different packages and versions. Once the virtual environment is activated, you can proceed with the installation of Flask-Deta and other packages specific to your project.
 
-[Go to Home](flaskdeta.md#installation)
+[Go to Home](/Install/flaskdeta/)

@@ -1,55 +1,64 @@
-import io
 from abc import ABC
 from typing import Optional
 from flask import Flask
 from deta import Deta
+from colorama import Fore
 
+# SUPERCLASS
+class DetaConnect(ABC):
 
-class DetaTemplate(ABC):
     def __init__(
         self,
         app: Flask = None,
         project_key: Optional[str] = None,
         name: Optional[str] = None,
+        type: str = None,
+        config_key: str = None
     ):
-        self.__instance__ = self.__get_deta_instance__()
-        self.__config__ = self.__get_config_name__()
-        self.__type__ = self.__get_type_name__()
+        # Flask Instance
+        self._app = app
 
-        self.__app__ = app
+        # Deta Project Key
+        self._project_key = project_key or (app and app.config.get("DETA_PROJECT_KEY"))
 
-        self.__project_key__ = project_key or (app and app.config.get("DETA_PROJECT_KEY"))
+        # Name of Drive/Base. Retrieve it from the app or enter it manually.
+        self._name = name or (app and app.config.get(config_key))
 
-        self.__name = name or (app and app.config.get(self.__config__))
+        # Type of connection: Base or Drive
+        self._type = type
 
-        if not self.__project_key__:
-            raise ValueError(f"No project key provided for {self.__type__}")
+        if not self._project_key:
+            if self._app:
+                self._app.logger.error(f"[Deta-Flask]: No DetaSpace Project Key provided for Deta connection")
+            raise ValueError(f"[Deta-Flask]: No DetaSpace Project Key provided for Deta connection")
 
-        if not self.__name:
-            raise ValueError(f"No {self.__type__.lower()} name provided for {self.__type__}")
+        if not self._name:
+            if self._app:
+                self._app.logger.error(f"[Deta-Flask]:No {self._type} Name provided for Deta connection")
+            raise ValueError(f"[Deta-Flask]: No {self._type} Name provided for Deta connection")
 
+        if not self._type:
+            raise ValueError(f"[Deta-Flask]: No {self._type} name provided for Deta connection")
+
+    def connect(self):
+        """ DetaSpace connection manager """
         try:
-            self.__deta__ = Deta(self.__project_key__)
-            setattr(
-                self,
-                self.__type__.upper(),
-                self.__instance__(self.__name),
-            )
+            # DetaBase
+            if self._type == "Base":
+                deta = Deta(self._project_key)
+                base = deta.Base(self._name)
+                return base
+            
+            # DetaDrive
+            elif self._type == "Drive":
+                deta = Deta(self._project_key)
+                drive = deta.Drive(self._name)
+                return drive
+
         except Exception as e:
-            if self.__app__:
-                self.__app__.logger.error(
-                    f"Error connecting to {self.__type__.lower()} in Flask-Deta => deta.{self.__type__}(): {e}"
+            if self._app:
+                self._app.logger.error(
+                    Fore.RED + f"Error connecting to {self._type} in Flask-Deta => deta.{self._type}(): {e}" + Fore.RESET
                 )
-            setattr(self, self.__type__.upper(), None)
-
-    @classmethod
-    def __get_config_name__(cls):
-        pass
-
-    @classmethod
-    def __get_type_name__(cls):
-        pass
-
-    @classmethod
-    def __get_deta_instance__(cls):
-        pass
+            setattr(self, self._type, None)
+            return None

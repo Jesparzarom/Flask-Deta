@@ -1,11 +1,22 @@
 #  SITE NAME
 site_name: Flask-Deta
 
+site_description: "A Python library for seamless integration with DetaSpace in Flask"
+
+repo_url: https://github.com/Jesparzarom/Flask-Deta
+repo_name: "Flask-Deta"
+
 # NAVIGATION
 nav:
-  - Introduction: 'index.md'
-  - Installation: 'Install/flaskdeta.md'
-  - DetaBase: 'DetaBase/Base.md'
+  - Introduction: "/"
+  - Installation: "Install/flaskdeta/"
+  - QuickStart: "QuickStart/start/"
+  - DetaBase: "DetaBase/Base/"
+  - DetaDrive: "DetaDrive/Drive/"
+  - About:
+    - License: "/LICENSE/"
+    - Changelog: "/changelog/"
+
 
 # THEME CONFIGURATIONS
 theme:
@@ -13,6 +24,10 @@ theme:
   name: material
   # LANGUAGE
   language: en
+
+  # ICONS
+  icon:
+    repo: fontawesome/brands/github
 
   highlightjs: true
   hljs_style: base16-decaf
@@ -22,13 +37,13 @@ theme:
     code: Ubuntu Mono
   # COLORS
 
-  palette: 
+  palette:
     # Palette toggle for light mode
     - scheme: default
       primary: pink
       accent: deep purple
       toggle:
-        icon: material/brightness-7 
+        icon: material/brightness-7
         name: Switch to dark mode
     # Palette toggle for dark mode
     - scheme: slate
@@ -36,32 +51,22 @@ theme:
       accent: pink
       toggle:
         icon: material/brightness-4
-  
+
   # FEATURES
   features:
     - navigation.footer
     - content.code.copy
+    - search.highlight
 
 # PLUGINS FOR THE SITE
 plugins:
   - search
 
-# EXTRAS 
+# EXTRAS
 extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://www.google.com
-      name: Jesparzarom
+  version: 1.0.0-alpha
 
-    - icon: fontawesome/brands/github
-      link: https://www.google.com
-
-    - icon: fontawesome/brands/github
-      link: https://www.google.com
-
-      
 copyright: Copyright &copy; 2023 J.P. Esparza.
-
 
 markdown_extensions:
   - pymdownx.highlight:

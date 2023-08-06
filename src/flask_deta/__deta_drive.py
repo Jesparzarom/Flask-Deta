@@ -1,25 +1,31 @@
 import io
 from typing import Optional, Union
-from deta import Deta
-from .__deta_setup import DetaTemplate
+from flask import Flask
+from .__deta_setup import DetaConnect
 
 
-class DetaDrive(DetaTemplate):
+class DetaDrive(DetaConnect):
+
     """
     Represents a DetaSpace Drive that allows you to store and manage files.
 
     Attributes:
-        DETA_PROJECT_KEY (str): The Deta Project key used for authentication.
-        DETA_DRIVE_NAME (str): The name of the DetaSpace Drive for files.
+        `app (Flask)`: Flash app to contextualize class methods and attributes.
+
+        `project_key  (str)`: The DetaSpace Project key used for authentication.
+            The argument can be passed manually, if the argument is empty, an attempt
+            is made to find it if it was defined as `app.config['DETA_PROJECT_KEY] = "myKey"`.
+
+        `name (str)`: The name of your DetaSpace Drive.The argument can be passed manually, if the argument is empty, an attempt is made to find it if it was defined as `app.config['DRIVE_NAME'] = "coolDrive"`.
 
     Methods:
-        get_all_files() -> Optional[dict]:
+        get_all_files():
             Fetches all files stored in the Deta Drive.
 
             Returns:
                 dict: A dictionary containing information about all the files, or None if an error occurs.
 
-        get_file(filename: str) -> Optional[bytes]:
+        get_file(filename: str):
             Fetches a specific file from the Deta Drive.
 
             Args:
@@ -31,10 +37,10 @@ class DetaDrive(DetaTemplate):
 
         push_file(
             filename: str,
-            data: Optional[str|bytes|io.TextIOBase|io.BufferedIOBase|io.RawIOBase] = None,
-            file_path: Optional[str] = None,
-            type: Optional[str] = None
-        ) -> Optional[bool]:
+            data: dict[str|bytes|io.TextIOBase|io.BufferedIOBase|io.RawIOBase] = None,
+            file_path: str = None,
+            type: str = None
+        ):
 
             Saves a file in the Deta Cloud Drive.
 
@@ -51,7 +57,7 @@ class DetaDrive(DetaTemplate):
             Returns:
                 bool: True if the file is saved successfully, or None if an error occurs.
 
-        remove_file(name: str) -> Optional[str]:
+        remove_file(name: str):
             Removes a file from the Deta Drive.
 
             Args:
@@ -61,14 +67,14 @@ class DetaDrive(DetaTemplate):
                 str: The name of the removed file, or None if the file does not exist or an error occurs.
     """
 
-    def __get_config_name__(self):
-        return "DETA_DRIVE_NAME"
-
-    def __get_type_name__(self):
-        return "Drive"
-
-    def __get_deta_instance__(self):
-        return Deta().Drive
+    def __init__(
+        self,
+        app: Flask = None,
+        project_key: str | None = None,
+        name: str | None = None,
+    ):
+        super().__init__(app, project_key, name, "Drive", "DRIVE_NAME")
+        self.DRIVE = super().connect()
 
     def get_all_files(self) -> Optional[dict]:
         """
@@ -81,7 +87,7 @@ class DetaDrive(DetaTemplate):
         ```python
         app = Flask(__name__)
         app.config["DETA_PROJECT_KEY"] = "MyKey12345"
-        app.config["DETA_DRIVE_NAME"] = "brands" # DetaSpace Drive for files
+        app.config["DRIVE_NAME"] = "brands" # DetaSpace Drive for files
 
         dd = DetaDrive(app)
         logos = dd.get_all_files()
@@ -93,7 +99,7 @@ class DetaDrive(DetaTemplate):
             all_files = self.DRIVE.list()
             return all_files
         except Exception as e:
-            self.__app__.logger.error(f"Error fetching records: {e}")
+            self._app.logger.error(f"Error fetching records: {e}")
             return None
 
     def get_file(self, filename: str) -> Optional[bytes]:
@@ -110,7 +116,7 @@ class DetaDrive(DetaTemplate):
         ```python
         >>> app = Flask(__name__)
         >>> app.config["DETA_PROJECT_KEY"] = "MyKey12345"
-        >>> app.config["DETA_DRIVE_NAME"] = "brands" # DetaSpace Drive for files
+        >>> app.config["DRIVE_NAME"] = "brands" # DetaSpace Drive for files
         >>> dd = DetaDrive(app)
         >>>
         >>> descriptions = "descriptions.txt"
@@ -124,7 +130,7 @@ class DetaDrive(DetaTemplate):
             file = self.DRIVE.get(filename)
             return file
         except Exception as e:
-            self.__app__.logger.error(f"Error fetching record: {e}")
+            self._app.logger.error(f"Error fetching record: {e}")
             return None
 
     def push_file(
@@ -133,7 +139,7 @@ class DetaDrive(DetaTemplate):
         data: Union[str, bytes, io.TextIOBase, io.BufferedIOBase, io.RawIOBase] = None,
         file_path: Optional[str] = None,
         type: Optional[str] = None,
-    ) -> Optional[bool]:
+    ):
         """
         Saves a file in the Deta Drive.
 
@@ -154,7 +160,7 @@ class DetaDrive(DetaTemplate):
         ```python
         >>> app = Flask(__name__)
         >>> app.config["DETA_PROJECT_KEY"] = "MyKey12345"
-        >>> app.config["DETA_DRIVE_NAME"] = "categories" # DetaSpace Drive for files
+        >>> app.config["DRIVE_NAME"] = "categories" # DetaSpace Drive for files
         >>> dd = DetaDrive(app)
         >>>
         >>> filename = "electronics.txt"
@@ -169,17 +175,10 @@ class DetaDrive(DetaTemplate):
         if not self.DRIVE:
             return None
         try:
-            config = {
-                "name": filename,
-                "data": data,
-                "path": file_path,
-                "content_type": type,
-            }
-
-            return self.DRIVE.put(**config)
+            return self.DRIVE.put(name=filename, data=data, path=file_path, content_type=type)
 
         except Exception as e:
-            self.__app__.logger.error(f"Error saving file: {e}")
+            self._app.logger.error(f"Error saving file: {e}")
             return None
 
     def remove_file(self, name: str) -> Optional[str]:
@@ -196,7 +195,7 @@ class DetaDrive(DetaTemplate):
         ```python
         >>> app = Flask(__name__)
         >>> app.config["DETA_PROJECT_KEY"] = "MyKey12345"
-        >>> app.config["DETA_DRIVE_NAME"] = "categories" # DetaSpace Drive for files
+        >>> app.config["DRIVE_NAME"] = "categories" # DetaSpace Drive for files
         >>> dd = DetaDrive(app)
         >>>
         >>> filename_to_remove = "example.txt"
@@ -208,5 +207,5 @@ class DetaDrive(DetaTemplate):
         try:
             return self.DRIVE.delete(name)
         except Exception as e:
-            self.__app__.logger.error(f"Error deleting record: {e}")
+            self._app.logger.error(f"Error deleting record: {e}")
             return None
