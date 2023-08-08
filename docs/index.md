@@ -1,5 +1,5 @@
 
-<a href="/" target="_blank">
+<a href="/">
     <img src="images/flaskdeta.png" width=100%/>
 </a>
 
