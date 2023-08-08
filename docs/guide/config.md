@@ -27,7 +27,7 @@ drive = DetaDrive(app)
 
 ### flask_deta.config.DETA_PROJECT_KEY
 
-This key is used to set your Deta project key, which is required for connecting to your Deta account.
+*This key is used to set your Deta project key, which is required for connecting to your Deta account.
 
 ```python
 # Usage

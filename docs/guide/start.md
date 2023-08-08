@@ -13,7 +13,7 @@ Explore the complete usage and available methods in our [**DetaBase** documentat
 
 ```python
 from flask import Flask
-from deta_flask import DetaBase
+from flask_deta import DetaBase
 
 app = Flask(__name__)
 
@@ -22,7 +22,7 @@ app.config["DETA_PROJECT_KEY"] = "MyKey12345"
 app.config["DETA_DB_NAME"] = "products" # DetaSpace Base for data 
 
 # Create instance of DetaBase
-db = DetaBase(app)
+base = DetaBase(app)
 ```
 
 
@@ -33,7 +33,7 @@ Explore the complete usage and available methods in our [**DetaDrive** documenta
 
 ```python
 from flask import Flask
-from deta_flask import DetaDrive
+from flask_deta import DetaDrive
 
 app = Flask(__name__)
 
@@ -55,7 +55,7 @@ For comprehensive details on the usage and available methods, refer to our docum
 
 ```python
 from flask import Flask
-from deta_flask import DetaBase, DetaDrive
+from flask_deta import DetaBase, DetaDrive
 
 app = Flask(__name__)
 

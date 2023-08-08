@@ -1,13 +1,22 @@
-To use Flask-Deta in your Python project, you can easily install it using pip.
+##### Installing via Pip
+To incorporate Flask-Deta into your Python project, a straightforward method involves its installation through pip.
 
-```bash
-pip install Deta-Flask
-``` 
+```shell
+pip install flask-deta
+```
 
-> ⚠ **Create a Virtual Environment (highly recommended)**: Before installing any Python package, it is a good practice to create and activate a virtual environment for your project to isolate its dependencies. [How to create virtual env.](venv.md)
+> ⚠ **Establish a Virtual Environment (highly recommended)**: Prior to installing any Python package, it is strongly advised to establish and activate a virtual environment tailored for your project. This practice ensures the segregation of dependencies. [Learn how to create a virtual environment](venv.md).
 
+Once the installation process concludes, you'll be all set to seamlessly integrate DetaSpace functionalities into your Flask application with Flask-Deta. For a more comprehensive understanding of how to effectively employ this library within your project, remember to refer to the documentation.
 
-After the installation is complete, you are ready to start integrating DetaSpace functionalities into your Flask application with Flask-Deta. Be sure to check out the documentation for more details on how to use the library effectively in your project.
+##### Dependencies
+
+To ensure the proper functioning of your package, it will automatically install the following dependencies if they are not already present:
+
+- [x] Flask
+- [x] deta
+
+---
 
 
 > 🥳 Happy coding with Flask-Deta!

@@ -6,13 +6,16 @@ site_description: "A Python library for seamless integration with DetaSpace in F
 repo_url: https://github.com/Jesparzarom/Flask-Deta
 repo_name: "Flask-Deta"
 
+
 # NAVIGATION
 nav:
-  - Home: index.md
+  - Overview: index.md
+
+
   - Gettin Started:
-      - Installation: guide/install.md
-      - Configurations: guide/config.md
-      - Quickstart : guide/start.md
+    - Installation: guide/install.md
+    - Configurations: guide/config.md
+    - Quickstart : guide/start.md
   
   - Methods reference:
     - DetaBase: detabase/base.md
@@ -32,9 +35,12 @@ theme:
   # ICONS
   icon:
     repo: fontawesome/brands/github
+  
+  favicon: images/fdlogo.png
+  logo: images/fdlogo.png
 
   highlightjs: true
-  hljs_style: base16-decaf
+
   # FONTS
   font:
     text: Fira Sans
@@ -44,15 +50,15 @@ theme:
   palette:
     # Palette toggle for light mode
     - scheme: default
-      primary: pink
+      primary: deep purple
       accent: deep purple
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Palette toggle for dark mode
     - scheme: slate
-      primary: pink
-      accent: pink
+      primary: purple
+      accent: purple
       toggle:
         icon: material/brightness-4
 
@@ -60,7 +66,10 @@ theme:
   features:
     - navigation.footer
     - content.code.copy
+    - content.code.hljs
     - search.highlight
+    - navigation.instant
+    - navigation.instant.prefetch
 
 # PLUGINS FOR THE SITE
 plugins:
@@ -68,15 +77,25 @@ plugins:
 
 # EXTRAS
 extra:
-  version: 1.0.0-alpha
+  version: 0.1.0
+
 
 copyright: Copyright &copy; 2023 J.P. Esparza.
 
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.highlight: 
+      use_pygments: false
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: false
+  - toc:
+      title: On this page
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+  - javascripts/highlight.js
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/shades-of-purple.min.css
+
+
