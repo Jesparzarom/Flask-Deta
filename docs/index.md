@@ -2,6 +2,7 @@
 
 **😁Welcome to Flask-Deta documentation!**
 
+
 Flask-Deta is a fantastic Python library that simplifies the integration of your [DetaSpace](https://deta.space/) collection of database and/or drive files with [Flask](https://flask.palletsprojects.com/en/2.3.x/), a popular web framework. 
 
 With Flask-Deta, you can effortlessly store and manage data with `DetaBase` and handle file storage operations with `DetaDrive`, all within the context of your Flask application. This robust combination allows you to leverage the secure and scalable cloud infrastructure of [DetaSpace](https://deta.space/), making data and file management for your web projects convenient and efficient. 
@@ -9,6 +10,24 @@ With Flask-Deta, you can effortlessly store and manage data with `DetaBase` and 
 In this comprehensive guide, we will provide you with an in-depth overview of Flask-Deta and help you get started using this extraordinary tool.
 
 > With DetaSpace's free cloud storage you can easily store and manage data and files in your Flask applications.
+
+## User Guide
+For comprehensive information on how to use Flask-Deta, please refer to our User Guide, which covers the following topics: 
+
+### Getting started
+- [Installation](./guide/install.md)
+- [Configurations](./guide/config.md)
+- [Quickstart](./guide/start.md)
+### Api reference 
+- [DetaBase](./detabase/base.md)
+- [DetaDrive](./detadrive/drive.md)
+### About
+- [License](./about/LICENSE.md)
+- [Changes](./about/changelog.md)
+    
+
+
+
 
 
 ## What is Flask-Deta?
@@ -20,16 +39,6 @@ Flask-Deta is a library developed to streamline data and file storage and manage
 - **Versatility**: With Flask-Deta, you can store and retrieve data from Deta Base, as well as upload, download, and delete files with Deta Drive.
 
 - **Quick Setup**: Configuring Flask-Deta in your Flask application is fast and direct, allowing you to focus on the development of your project.
-
-## User Guide
-For comprehensive information on how to use Flask-Deta, please refer to our User Guide, which covers the following topics: 
-
-- [Installation](/Install/flaskdeta/)
-- [QuickStart](/QuickStart/start/)
-- [DetaBase](/DetaBase/Base/)
-- [DetaDrive](/DetaBase/Base/)
-
-For comprehensive information on how to use Flask-Deta, please refer to our User Guide, which covers the following topics:
 
 ## Source Code
 
@@ -43,7 +52,7 @@ If you find any issues or have ideas for improvements, feel free to open an issu
 
 ## License
 
-Flask-Deta is licensed under the BSD 3-Clause License. See [LICENSE](/LICENSE/) for more details.
+Flask-Deta is licensed under the BSD 3-Clause License. See [LICENSE](./about/LICENSE.md) for more details.
 
 By using this project, you agree to abide by the terms of the BSD 3-Clause License. We encourage you to review the license for more details. This license ensures that this project remains open-source and freely accessible to the community, fostering collaboration and innovation.
 

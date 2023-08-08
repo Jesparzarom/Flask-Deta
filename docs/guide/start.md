@@ -9,7 +9,7 @@
 
 ## DetaBase
 
-Explore the complete usage and available methods in our [**DetaBase** documentation](/DetaBase/Base/)
+Explore the complete usage and available methods in our [**DetaBase** documentation](../detabase/base.md)
 
 ```python
 from flask import Flask
@@ -29,7 +29,7 @@ db = DetaBase(app)
 
 ## DetaDrive
 
-Explore the complete usage and available methods in our [**DetaDrive** documentation](/DetaDrive/drive/)
+Explore the complete usage and available methods in our [**DetaDrive** documentation](../detadrive/drive.md)
 
 ```python
 from flask import Flask
@@ -51,7 +51,7 @@ dd = DetaDrive(app)
 
 Integrate the features of DetaBase and DetaDrive seamlessly into your Flask application with. These components enable efficient storage and management of data and files within your project using DetaSpace.
 
-For comprehensive details on the usage and available methods, refer to our documentation: [DetaBase](/DetaBase/Base/) & [DetaDrive](/DetaDrive/drive/).
+For comprehensive details on the usage and available methods, refer to our documentation: [DetaBase](../detabase/base.md) & [DetaDrive](../detadrive/drive.md).
 
 ```python
 from flask import Flask

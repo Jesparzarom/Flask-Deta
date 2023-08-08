@@ -8,15 +8,19 @@ repo_name: "Flask-Deta"
 
 # NAVIGATION
 nav:
-  - Introduction: "/"
-  - Installation: "Install/flaskdeta/"
-  - QuickStart: "QuickStart/start/"
-  - DetaBase: "DetaBase/Base/"
-  - DetaDrive: "DetaDrive/Drive/"
-  - About:
-    - License: "/LICENSE/"
-    - Changelog: "/changelog/"
+  - Home: index.md
+  - Gettin Started:
+      - Installation: guide/install.md
+      - Configurations: guide/config.md
+      - Quickstart : guide/start.md
+  
+  - Methods reference:
+    - DetaBase: detabase/base.md
+    - DetaDrive: detadrive/drive.md
 
+  - About:
+      - Changes: about/changelog.md
+      - License: about/LICENSE.md
 
 # THEME CONFIGURATIONS
 theme:
