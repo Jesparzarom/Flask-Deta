@@ -25,17 +25,17 @@ class DetaBase(DetaConnect):
     ### Methods:
         *   `get_all()`:Fetches all data stored in the Deta Base.
 
-        *   `get(filename: str)`: Fetches a specific file from the Deta Base.
+        *   `get(key: str)`: Fetches a specific file from the Deta Base.
 
-        *   `put(filename: str, data: dict[str|bytes|io.TextIOBase|io.BufferedIOBase|io.RawIOBase] = None, file_path: str = None, type: str = None)`:
+        *   `put(data: dict[str|bytes|io.TextIOBase|io.BufferedIOBase|io.RawIOBase] = None, key: str = None, expire_in: int = None, expire_at: int|float|datetime = None)`:
             Saves a file in the Deta Cloud Base.
 
         *   `put_all(items: list[dict], expire_in: int = None, expire_at: int | float | datetime = None,)`:
             Store a list whit your dict[data] in the Deta database.
 
-        *   `update(self, key: str, updates: dict[dict, list, tuple, int, str, bool])`: Saves a file in the DetaSpace database.
+        *   `update(key: str, updates: dict[dict, list, tuple, int, str, bool], expire_in: int = None, expire_at: int | float | datetime = None)`: Saves a file in the DetaSpace database.
 
-        *   `remove(name: str)`: Removes a file from the Deta Base.
+        *   `delete(key: str)`: Removes a file from the Deta Base.
     """
 
     def __init__(
@@ -234,7 +234,9 @@ class DetaBase(DetaConnect):
 
         ### Args:
             *   `key (str)`: The key associated with the data to be updated. Equivalent to id or a primary key
-            *   `data (dict[dict | list | str | int | bool])`: The updated data.
+            *   `updates (dict[dict | list | str | int | bool])`: The updated data.
+            *   `expire_in`: (Optional) Time in seconds until the data expires.
+            *   `expire_at`: (Optional) Unix timestamp or datetime when the data expires.
 
         ### Returns:
             Any | None: The result of the database update operation or None if the database is not available or an error occurs.

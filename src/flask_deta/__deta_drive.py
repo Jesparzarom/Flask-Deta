@@ -21,9 +21,9 @@ class DetaDrive(DetaConnect):
     ### Methods:
         *   `all_files()`: Fetches all files stored in the Deta Drive.
 
-        *   `get_file(filename: str)`: Fetches a specific file from the Deta Drive.
+        *   `get_file(name: str)`: Fetches a specific file from the Deta Drive.
 
-        *   `put_file(filename: str,data: dict[str|bytes|io.TextIOBase|io.BufferedIOBase|io.RawIOBase] = None, file_path: str = None, type: str = None): `
+        *   `put_file(name: str,data: dict[str|bytes|io.TextIOBase|io.BufferedIOBase|io.RawIOBase] = None, file_path: str = None, type: str = None): `
             Saves a file in the Deta Cloud Drive.
 
         *   `delete_file(name: str)`:Removes a file from the Deta Drive.
@@ -69,12 +69,12 @@ class DetaDrive(DetaConnect):
             self._app.logger.error(f"Error fetching records: {e}")
             return None
 
-    def get_file(self, filename: str) -> Optional[bytes]:
+    def get_file(self, name: str) -> Optional[bytes]:
         """
         Fetches a specific file from the Deta Drive.
 
         ### Args:
-            `filename (str)`: The name of the file to fetch.
+            `name (str)`: The name of the file to fetch.
 
         ### Returns:
             bytes or None: The content of the file as bytes, or None if the file does not exist or an error occurs.
@@ -94,32 +94,32 @@ class DetaDrive(DetaConnect):
         if not self._DRIVE:
             return None
         try:
-            one_file = self._DRIVE.get(filename)
+            one_file = self._DRIVE.get(name)
             if one_file:
                 return one_file
             else:
-                abort(404, f"Error fetching record: {filename}")
+                abort(404, f"Error fetching record: {name}")
         except Exception as e:
             self._app.logger.error(f"Error fetching record: {e}")
             return None
 
     def put_file(
         self,
-        filename: str,
+        name: str,
         data: Union[str, bytes, io.TextIOBase, io.BufferedIOBase, io.RawIOBase] = None,
-        file_path: Optional[str] = None,
+        path: Optional[str] = None,
         type: Optional[str] = None,
     ):
         """
         Saves a file in the Deta Drive.
 
         ### Args:
-            *   `filename (str)`: The name of the file to be saved.
+            *   `name (str)`: The name of the file to be saved.
 
             *   `data (str| bytes|io.TextIOBase|io.BufferedIOBase|io.RawIOBase, optional)`:
                 The data content of the file. Defaults to None.
 
-            *   `file_path (str, optional)`: The local path of the file to be saved. Defaults to None.
+            *   `path (str, optional)`: The local path of the file to be saved. Defaults to None.
 
             *   `type (str, optional)`: The content type (MIME style => "type/subtype") of the file. Defaults to None.
 
@@ -133,9 +133,9 @@ class DetaDrive(DetaConnect):
         >>> app.config["DRIVE_NAME"] = "categories" # DetaSpace Drive for files
         >>> drive = DetaDrive(app)
         >>>
-        >>> filename = "electronics.txt"
+        >>> name = "electronics.txt"
         >>> data = "Hello, Electronics!"
-        >>> drive.put_file(filename, data=data, type="text/plain")
+        >>> drive.put_file(name, data=data, type="text/plain")
         ```
 
         ####    Notes:
@@ -146,13 +146,13 @@ class DetaDrive(DetaConnect):
             return None
         try:
             to_save = self._DRIVE.put(
-                name=filename, data=data, path=file_path, content_type=type
+                name=name, data=data, path=path, content_type=type
             )
 
             if to_save:
                 return to_save
             else:
-                return abort(404, f"Error saving file: {filename}")
+                return abort(404, f"Error saving file: {name}")
 
         except Exception as e:
             self._app.logger.error(f"Error saving file: {e}")
@@ -175,8 +175,8 @@ class DetaDrive(DetaConnect):
         >>> app.config["DRIVE_NAME"] = "categories" # DetaSpace Drive for files
         >>> drive = DetaDrive(app)
         >>>
-        >>> filename_to_remove = "example.txt"
-        >>> drive.delete_file(filename_to_remove)
+        >>> file_to_remove = "example.txt"
+        >>> drive.delete_file(file_to_remove)
         ```
         """
         if not self._DRIVE:

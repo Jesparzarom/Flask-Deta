@@ -37,7 +37,7 @@ classifiers = [
   "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-
+license = { file = "LICENSE" }
 
 [project.urls]
 "Homepage" = "https://github.com/Jesparzarom/Flask-Deta"

@@ -1,12 +1,14 @@
-
+# OVERVIEW
 <a href="/">
     <img src="images/flaskdeta.png" width=100%/>
 </a>
 
-# OVERVIEW
+## Version 0.1.1
+> ⚠️ This is the initial version 0.1.0 and is currently in the alpha stage. It is not recommended for professional production use.
 
-**Welcome to Flask-Deta documentation!**
+---
 
+**Welcome to FlaskDeta Docs!**
 
 Flask-Deta is a Python library that simplifies the integration of your [DetaSpace](https://deta.space/) collection of database and/or drive files with [Flask](https://flask.palletsprojects.com/en/2.3.x/) framework. 
 
@@ -14,7 +16,7 @@ With Flask-Deta, you can store and manage data with `DetaBase` and handle file s
 
 In this documents, we will provide you with an in-depth overview of Flask-Deta and help you get started using this extraordinary tool.
 
-> With DetaSpace's free cloud storage you can easily store and manage data and files in your Flask applications.
+> We'd like to inform you that not all DetaSpace functionalities are currently integrated, both in Drive and Base. However, we are working on gradually incorporating them to create a robust integration package between Flask and DetaSpace. Our aim is to enhance your development experience by leveraging the full potential of this integration.
 
 
 <!----------------------------USER GUIDE----------------------------------->
@@ -34,19 +36,13 @@ For comprehensive information on how to use Flask-Deta, please refer to our User
     
 
 
-<!----------------------------INTRODUCTION----------------------------------->
-
-
-## What is Flask-Deta?
-Flask-Deta is a library developed to streamline data and file storage and management in web applications created with Flask. By integrating DetaSpace Base and DetaSpace Drive with Flask, Flask-Deta enables you to leverage the secure and scalable infrastructure of Deta for your data and file storage needs in your web project.
-
 <!----------------------------FEATURES----------------------------------->
-## Key Features
-- **Simple Interface**: Flask-Deta provides a user-friendly and straightforward interface to interact with Deta Base and Deta Drive.
+## Key Advantages
+- **Seamless Interaction:** Flask-Deta provides an intuitive and user-centric framework that seamlessly facilitates interactions with Deta Base and Deta Drive.
 
-- **Versatility**: With Flask-Deta, you can store and retrieve data from Deta Base, as well as upload, download, and delete files with Deta Drive.
+- **Comprehensive Versatility:** Unleash the capabilities of Flask-Deta to effortlessly store, retrieve, upload, download, and manage data through Deta Base, while also handling file management tasks using Deta Drive.
 
-- **Quick Setup**: Configuring Flask-Deta in your Flask application is fast and direct, allowing you to focus on the development of your project.
+- **Effortless Integration:** Configuring Flask-Deta within your Flask application is a swift and straightforward process, allowing you to dedicate your efforts to the core development of your project.
 
 <!----------------------------SOURCE CODE----------------------------------->
 ## Source Code
@@ -56,6 +52,7 @@ The **[source code](https://github.com/Jesparzarom/Flask-Deta)** of this project
 > The codebase relies on the Flask and Deta libraries, which are essential components driving the functionality of this project.
 
 <!----------------------------ISSUES----------------------------------->
+
 ## Issues
 
 If you find any issues or have ideas for improvements, feel free to open an issue on [GitHub Repo/issues](https://github.com/Jesparzarom/Flask-Deta/issues/new).
@@ -79,12 +76,12 @@ J.P. Esparza | [jesparzarom](https://github.com/Jesparzarom)
 
 
 <!----------------------------SPONSORSHIP----------------------------------->
-## Sponsor the Project
-If you find Deta-Flask valuable and want to contribute to its continued development and maintenance, consider sponsoring the project. Your sponsorship will help support the developers' efforts to enhance the library, fix issues, and add new features.
+## Support the Project
+If you value Deta-Flask and its continued growth, consider backing the project. Your support helps developers enhance the library, fix issues, and add features.
 
-By sponsoring Deta-Flask, you ensure that it remains a reliable and powerful tool for integrating DetaSpace's collections functionalities with Flask.
+By backing Deta-Flask, you ensure a reliable tool for integrating DetaSpace's functionalities with Flask.
 
-Your support is greatly appreciated and will contribute to the success and sustainability of the project. Together, we can make Deta-Flask even better!
+Your support is appreciated and fuels the project's success. Together, we can enhance Deta-Flask further!
 
 
 <!----------------------------LOGO----------------------------------->
@@ -100,6 +97,6 @@ Your support is greatly appreciated and will contribute to the success and susta
 </a>
 
 
-> In this project, we would like to extend our sincere appreciation to the creators and maintainers of the Flask and Deta libraries. Flask, a powerful web framework, has played a crucial role in the development of this project, while Deta, with its efficient data storage and management capabilities, has greatly contributed to its success. Without these remarkable open-source libraries and the efforts of their dedicated communities, this project would not have been possible. We express our gratitude to the Flask and Deta teams for their outstanding work, which has enriched the development experience and functionality of this project.
+> Our sincere thanks to the creators and maintainers of the Flask and Deta libraries, as well as the Python community.
 
 ---

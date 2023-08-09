@@ -34,11 +34,22 @@ base = DetaBase(app)
 ```
 
 ---
-## Methods:
+### Methods:
+* [get_all](#get_all) -> Fetches all data stored in the Deta Base.
+
+* [get](#get) -> Fetches a specific file from the Deta Base.
+
+* [put](#put) -> Saves a file in the Deta Cloud Base.
+
+* [put_all](#put_all) -> Store a list whit your dict[data] in the Deta database.
+
+* [update](#update) -> Saves a file in the DetaSpace database.
+
+* [delete](#delete) -> Removes a file from the Deta Base.
 
 Building upon the previous instantiation example, wherein the Flask-Deta instance is assigned to a variable named `base` using `base = DetaBase(app)`, the following methods can be subsequently employed:
 
-###  get_all
+####  get_all
 
 ```python
 base.get_all()
@@ -56,7 +67,7 @@ all_data = base.get_all()
 
 ---
 
-### get 
+#### get 
 ```python
 base.get(key: str):
 ```
@@ -75,7 +86,7 @@ result = base.get(key)
 ```
 ---
 
-### put
+#### put
 
 ```python
 base.put(
@@ -111,7 +122,7 @@ base.put(data, key="custom_key", expire_in=300)
 ```
 ---
 
-### put_all
+#### put_all
 ```python
 base.put_all(
     items: list[dict],
@@ -146,7 +157,7 @@ db.put_all(records)
 
 ---
 
-### update
+#### update
 ```python
 base.update(
     key: str,
@@ -175,7 +186,7 @@ expire_in = 60 # seconds
 db.update(key=id_key, updates=update, expire_in=expire_in)
 ```
 
-### delete
+#### delete
 ```python
 base.delete(key: str):
 ```

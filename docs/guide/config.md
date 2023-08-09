@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 # Configuration keys
 app.config["DETA_PROJECT_KEY"] = "MyKey123"
-app.config["BASE_NAME"] = "clients" # For DetaBase
+app.config["BASE_NAME"] = "products" # For DetaBase
 app.config["DRIVE_NAME"] = "icons" # For DetaDrive
 
 base = DetaBase(app)
@@ -42,7 +42,7 @@ This key is used to set the base name when working with DetaBase. It identifies 
 
 ```python
 # Usage
-app.config["BASE_NAME"] = "clients" # For DetaBase
+app.config["BASE_NAME"] = "products" # For DetaBase
 ```
 
 ---

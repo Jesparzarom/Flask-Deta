@@ -21,7 +21,7 @@ app = Flask(__name__)
 
 # Set the DetaSpace project key and drive name
 app.config["DETA_PROJECT_KEY"] = "MyKey12345"
-app.config["DETA_DRIVE_NAME"] = "brands" # DetaSpace Drive for files
+app.config["DRIVE_NAME"] = "icons" # DetaSpace Drive for files
 
 # Create instances of DetaDrive
 drive = DetaDrive(app)
@@ -29,15 +29,17 @@ drive = DetaDrive(app)
 ---
 
 ### Methods:
-* [all_files()](#all_files) -> Fetches all files stored in the Deta Drive.
+* [all_files](#all_files) -> Fetches all files stored in the Deta Drive.
 
-* [get_file(filename: str)](#get_file) -> Fetches a specific file from the Deta Drive.
+* [get_file](#get_file) -> Fetches a specific file from the Deta Drive.
 
-* [put_file(filename: str,data: dict[str|bytes|io.TextIOBase|io.BufferedIOBase|io.RawIOBase] = None, file_path: str = None, type: str = None)](#put_file) -> Saves a file in the Deta Cloud Drive.
+* [put_file](#put_file) -> Saves a file in the Deta Cloud Drive.
 
-*  [delete_file(name: str)](#delete_file) -> Removes a file from the Deta Drive.
+* [delete_file](#delete_file) -> Removes a file from the Deta Drive.
 
 ---
+
+Building upon the previous instantiation example, wherein the Flask-Deta instance is assigned to a variable named `drive` using `drive = DetaBase(app)`, the following methods can be subsequently employed:
 
 <!------------------------------ALL FILES----------------------------------->
 #### all_files
@@ -60,12 +62,12 @@ logos = drive.all_files()
 <!---------------------------------GET FILE----------------------------------->
 #### get_file
 ```python
-drive.get_file(filename: str)
+drive.get_file(name: str)
 ```
 Fetches a specific file from the Deta Drive.
 
 - Args:
-    `filename (str)`: The name of the file to fetch.
+    `name (str)`: The name of the file to fetch.
 
 - Returns
     bytes or None: The content of the file as bytes, or None if the file does not exist or an error occurs.
@@ -82,21 +84,21 @@ file_content = drive.get_file(descriptions)
 #### put_file
 ```python
 drive.put_file(
-    filename: str,
+    name: str,
     data: str| bytes|io.TextIOBase|io.BufferedIOBase|io.RawIOBase = None,
-    file_path: str = None,
+    path: str = None,
     type: str = None,
 )
 ```
 Saves a file in the Deta Drive.
 
 - Args:
-    * `filename (str)`: The name of the file to be saved.
+    * `name (str)`: The name of the file to be saved.
 
     * `data (str| bytes|io.TextIOBase|io.BufferedIOBase|io.RawIOBase, optional)`:
         The data content of the file. Defaults to None.
 
-    *  `file_path (str, optional)`: The local path of the file to be saved. Defaults to None.
+    *  `path (str, optional)`: The local path of the file to be saved. Defaults to None.
 
     *  `type (str, optional)`: The content type (MIME style => "type/subtype") of the file. Defaults to None.
 
@@ -105,9 +107,9 @@ Saves a file in the Deta Drive.
 
 > Example
 ```python
-filename = "electronics.txt"
+name = "electronics.txt"
 data = "Hello, Electronics!"
-drive.put_file(filename, data=data, type="text/plain")
+drive.put_file(name=name, data=data, type="text/plain")
 ```
 
 > ⚠ Note: you can find all MIME types in: 
@@ -131,6 +133,6 @@ Removes a file from the Deta Drive.
 
 > Example
 ```python
-filen_to_remove = "example.txt"
+file_to_remove = "example.txt"
 drive.delete_file(file_to_remove)
 ```

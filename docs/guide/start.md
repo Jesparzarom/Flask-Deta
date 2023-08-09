@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 # Set the DetaSpace project key and database name
 app.config["DETA_PROJECT_KEY"] = "MyKey12345"
-app.config["DETA_DB_NAME"] = "products" # DetaSpace Base for data 
+app.config["BASE_NAME"] = "products" # DetaSpace Base for data 
 
 # Create instance of DetaBase
 base = DetaBase(app)
@@ -39,7 +39,7 @@ app = Flask(__name__)
 
 # Set the DetaSpace project key and drive name
 app.config["DETA_PROJECT_KEY"] = "MyKey12345"
-app.config["DETA_DRIVE_NAME"] = "brands" # DetaSpace Drive for files
+app.config["DRIVE_NAME"] = "icons" # DetaSpace Drive for files
 
 # Create instances of DetaDrive
 dd = DetaDrive(app)
@@ -61,8 +61,8 @@ app = Flask(__name__)
 
 # Set the DetaSpace project key and drive name
 app.config["DETA_PROJECT_KEY"] = "MyKey12345"
-app.config["DETA_DB_NAME"] = "products" # DetaSpace Base for data 
-app.config["DETA_DRIVE_NAME"] = "brands" # DetaSpace Drive for files
+app.config["BASE_NAME"] = "products" # DetaSpace Base for data 
+app.config["DRIVE_NAME"] = "icons" # DetaSpace Drive for files
 
 # Create instances of DetaDrive
 db = DetaBase(app)
