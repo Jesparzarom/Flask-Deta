@@ -79,4 +79,4 @@ dd = DetaDrive(app)
 
 ```
 
-For comprehensive details on the usage and available methods, refer to our documentation: [DetaBase](./docs/DetaBase/base.md) & [DetaDrive](./docs/DetaDrive/drive.md).
+For comprehensive details on the usage and available methods, refer to our documentation: [DetaBase](./docs/DetaBase/Base.md) & [DetaDrive](./docs/DetaDrive/Drive.md).
