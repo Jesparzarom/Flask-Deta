@@ -1,99 +1,82 @@
-# Flask Deta
+## Version 0.1.1
+> ⚠️ This is the initial version 0.1.0 and is currently in the alpha stage. It is not recommended for professional production use.
 
-This is a simple guide on how to integrate Deta with your Flask application using the `flask-deta` package. DetaSpace is a cloud-based backend service that allows you to store and manage data in a scalable and efficient manner.
+---
 
-## Prerequisites
+**Welcome to FlaskDeta Docs!**
 
-Before you begin, make sure you have the following:
+Flask-Deta is a Python library that simplifies the integration of your [DetaSpace](https://deta.space/) collection of database and/or drive files with [Flask](https://flask.palletsprojects.com/en/2.3.x/) framework. 
 
-1. Python installed on your system.
-2. A Deta account. You can sign up for a free account at https://deta.sh/.
+With Flask-Deta, you can store and manage data with `DetaBase` and handle file storage operations with `DetaDrive`, all within the context of your Flask application. This robust combination allows you to leverage the secure and scalable cloud infrastructure of [DetaSpace](https://deta.space/), making data and file management for your web projects convenient. 
 
-## Installation
+In this documents, we will provide you with an in-depth overview of Flask-Deta and help you get started using this extraordinary tool.
 
-1. Install `flask-deta` package using pip:
-
-```bash
+> We'd like to inform you that not all DetaSpace functionalities are currently integrated, both in Drive and Base. However, we are working on gradually incorporating them to create a robust integration package between Flask and DetaSpace. Our aim is to enhance your development experience by leveraging the full potential of this integration.
+# Install
+```shell
 pip install flask-deta
 ```
 
-2. Create a new Flask project or open your existing Flask project.
+# QuickStart
 
-3. Import the necessary modules:
+1. **Create a Flask App:** Begin by creating an instance of the Flask app in your Python code.
 
+2. **Set Configuration Parameters:** Set the required parameters, such as your Deta project key, Base name, and Drive name.
+
+3. **Create DetaBase and DetaDrive Instances:** Create instances of DetaBase and DetaDrive using your Flask `app` as an argument.
+
+
+## DetaBase
 ```python
-from flask import Flask, request, jsonify
-from flask_deta import DetaSpace
-```
+from flask import Flask
+from flask_deta import DetaBase
 
-## Initialization
-
-1. Create a new Flask app:
-
-```python
 app = Flask(__name__)
+
+# Set the DetaSpace project key and database name
+app.config["DETA_PROJECT_KEY"] = "MyKey12345"
+app.config["BASE_NAME"] = "products" # DetaSpace Base for data 
+
+# Create instance of DetaBase
+base = DetaBase(app)
 ```
 
-2. Set the Deta configuration using your secret key and database name:
+## DetaDrive
+```python
+from flask import Flask
+from flask_deta import DetaDrive
+
+app = Flask(__name__)
+
+# Set the DetaSpace project key and drive name
+app.config["DETA_PROJECT_KEY"] = "MyKey12345"
+app.config["DRIVE_NAME"] = "icons" # DetaSpace Drive for files
+
+# Create instances of DetaDrive
+dd = DetaDrive(app)
+
+```
+
+
+## DetaBase + DetaDrive
+
+Integrate the features of DetaBase and DetaDrive seamlessly into your Flask application with. These components enable efficient storage and management of data and files within your project using DetaSpace.
 
 ```python
-app.config["DETA_SECRET_KEY"] = "YOUR_SECRET_KEY"
-app.config["DETA_DB_NAME"] = "YOUR_DATABASE_NAME"
+from flask import Flask
+from flask_deta import DetaBase, DetaDrive
+
+app = Flask(__name__)
+
+# Set the DetaSpace project key and drive name
+app.config["DETA_PROJECT_KEY"] = "MyKey12345"
+app.config["BASE_NAME"] = "products" # DetaSpace Base for data 
+app.config["DRIVE_NAME"] = "icons" # DetaSpace Drive for files
+
+# Create instances of DetaDrive
+db = DetaBase(app)
+dd = DetaDrive(app)
+
 ```
 
-## DetaSpace Integration
-
-1. Initialize the `DetaSpace` class with your Flask app:
-
-```python
-db = DetaSpace(app=app)
-```
-
-The `DetaSpace` class will handle the connection to the Deta backend using your provided secret key and database name.
-
-## Usage
-
-You can now use the `db` instance to interact with your Deta database.
-
-### Creating a Record
-
-To create a new record in the database, use the `create` method:
-
-```python
-@app.route("/create", methods=["POST"])
-def create_record():
-    data = request.get_json()
-    result = db.create(data)
-    if result:
-        return {"success": True}
-    else:
-        return {"success": False}, 500
-```
-
-### Fetching All Records
-
-To fetch all records from the database, use the `get_all` method:
-
-```python
-@app.route("/view_all", methods=["GET"])
-def view_all_records():
-    records = db.get_all()
-    records_list = []  # Initialize an empty list to store the records
-    for record in records.iterall():
-        records_list.append(record)  # Append each record to the list
-    return jsonify(records_list)
-```
-
-## Run the App
-
-Finally, run your Flask app:
-
-```bash
-python app.py
-```
-
-Your Flask app is now integrated with Deta, and you can start creating and fetching records from the database.
-
-Remember to handle error cases and implement additional features as needed for your specific use case.
-
-That's it! You've successfully integrated Deta with your Flask application using `flask-deta`. Enjoy building scalable and efficient applications with Deta's powerful backend service!
+For comprehensive details on the usage and available methods, refer to our documentation: [DetaBase](./docs/detabase/base.md) & [DetaDrive](./docs/detadrive/drive.md).
