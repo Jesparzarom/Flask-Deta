@@ -1,5 +1,5 @@
 ## Version 0.1.1
-> ⚠️ This is the initial version 0.1.0 and is currently in the alpha stage. It is not recommended for professional production use.
+> ⚠️ This is the initial version 0.1.1 and is currently in the alpha stage. It is not recommended for professional production use.
 
 ---
 
