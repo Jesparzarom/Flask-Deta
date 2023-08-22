@@ -3,8 +3,8 @@
     <img src="images/flaskdeta.png" width=100%/>
 </a>
 
-## Version 0.1.1
-> ⚠️ This is the initial version 0.1.1 and is currently in the alpha stage. It is not recommended for professional production use.
+## Version 0.2.0
+> ⚠️ This is the initial version 0.2.0 and is currently in the alpha development stage. It is not recommended for production use.
 
 ---
 
@@ -18,6 +18,8 @@ In this documents, we will provide you with an in-depth overview of Flask-Deta a
 
 > We'd like to inform you that not all DetaSpace functionalities are currently integrated, both in Drive and Base. However, we are working on gradually incorporating them to create a robust integration package between Flask and DetaSpace. Our aim is to enhance your development experience by leveraging the full potential of this integration.
 
+- [x] To learn more about DetaSpace visit the [DetaSpace documentation](https://deta.space/docs/en/).
+- [x] To learn more about Flask visit the [Flask documentation](https://flask.palletsprojects.com/en/2.3.x/).
 
 <!----------------------------USER GUIDE----------------------------------->
 ## User Guide
@@ -32,7 +34,7 @@ For comprehensive information on how to use Flask-Deta, please refer to our User
     * [DetaDrive](./detadrive/drive.md)
 - ##### About
     * [License](./about/LICENSE.md)
-    * [Changes](./about/changelog.md)
+    * [Changes](./about/CHANGELOG.md)
     
 
 
@@ -57,7 +59,9 @@ The **[source code](https://github.com/Jesparzarom/Flask-Deta)** of this project
 
 If you find any issues or have ideas for improvements, feel free to open an issue on [GitHub Repo/issues](https://github.com/Jesparzarom/Flask-Deta/issues/new).
 
-
+<!-----------------------------CHANGES---------------------------------->
+## Changes
+The changes can be found in the project [changelog](./about/CHANGELOG.md)
 
 <!----------------------------lICENSE----------------------------------->
 ## License
@@ -76,7 +80,7 @@ J.P. Esparza | [jesparzarom](https://github.com/Jesparzarom)
 
 
 <!----------------------------SPONSORSHIP----------------------------------->
-## Support the Project
+## Support this Project
 If you value Deta-Flask and its continued growth, consider backing the project. Your support helps developers enhance the library, fix issues, and add features.
 
 By backing Deta-Flask, you ensure a reliable tool for integrating DetaSpace's functionalities with Flask.

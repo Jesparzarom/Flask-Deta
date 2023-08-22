@@ -22,7 +22,7 @@ nav:
     - DetaDrive: detadrive/drive.md
 
   - About:
-      - Changes: about/changelog.md
+      - Changes: about/CHANGELOG.md
       - License: about/LICENSE.md
 
 # THEME CONFIGURATIONS
@@ -77,7 +77,7 @@ plugins:
 
 # EXTRAS
 extra:
-  version: 0.1.1
+  version: 0.2.0
 
 
 copyright: Copyright &copy; 2023 J.P. Esparza.

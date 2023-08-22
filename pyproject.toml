@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "flask-deta"
-version = "0.1.1"
+version = "0.2.0"
 description = "A Python library for seamless integration with DetaSpace in Flask"
 authors = [{ name = "J.P. Esparza" }]
 maintainers = [{ name = "J.P. Esparza" }]
@@ -40,6 +40,6 @@ classifiers = [
 license = { file = "LICENSE" }
 
 [project.urls]
-"Homepage" = "https://github.com/Jesparzarom/Flask-Deta"
+"Homepage" = "https://flask-deta.readthedocs.io/en/latest/"
 "Source Code" = "https://github.com/Jesparzarom/Flask-Deta"
 "Bug Tracker" = "https://github.com/Jesparzarom/Flask-Deta/issues"

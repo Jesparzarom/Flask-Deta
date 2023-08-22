@@ -1,3 +1,4 @@
-from .__deta_base import DetaBase
-from .__deta_drive import DetaDrive
-from .__model import DetaModel
+from .deta_base import DetaBase
+from .deta_drive import DetaDrive
+
+__version__ = "0.2.0"

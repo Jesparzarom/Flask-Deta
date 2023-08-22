@@ -1,9 +1,8 @@
 # Flask-Deta Configuration
 
-- **Creating a Flask App**: Begin by creating an instance of the Flask app in your Python code.
-- **Setting Configuration Keys**: Define the required configuration keys, such as your Deta project key, Base name, and Drive name.
-- **Instantiating DetaBase and DetaDrive**: Create instances of DetaBase, DetaDrive, or both by using the Flask `app` instance as an argument.
+Define the required configuration keys, such as your Deta project key, Base name, and Drive name.
 
+Example:
 ```python
 # Imports
 from flask import Flask
@@ -16,9 +15,6 @@ app = Flask(__name__)
 app.config["DETA_PROJECT_KEY"] = "MyKey123"
 app.config["BASE_NAME"] = "products" # For DetaBase
 app.config["DRIVE_NAME"] = "icons" # For DetaDrive
-
-base = DetaBase(app)
-drive = DetaDrive(app)
 ```
 
 ## Configuration Keys

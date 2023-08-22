@@ -12,3 +12,7 @@ __pycache__
 
 #Pypi
 .pypirc
+
+# Others
+dist
+.dist
