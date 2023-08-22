@@ -17,9 +17,8 @@ nav:
     - Configurations: guide/config.md
     - Quickstart : guide/start.md
   
-  - Methods reference:
-    - DetaBase: detabase/base.md
-    - DetaDrive: detadrive/drive.md
+  - DetaBase: detabase/base.md
+  - DetaDrive: detadrive/drive.md
 
   - About:
       - Changes: about/CHANGELOG.md
