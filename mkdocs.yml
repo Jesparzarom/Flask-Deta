@@ -10,8 +10,6 @@ repo_name: "Flask-Deta"
 # NAVIGATION
 nav:
   - Overview: index.md
-
-
   - Gettin Started:
     - Installation: guide/install.md
     - Configurations: guide/config.md
