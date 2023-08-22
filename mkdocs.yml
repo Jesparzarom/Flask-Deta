@@ -76,7 +76,7 @@ plugins:
 
 # EXTRAS
 extra:
-  version: 0.2.0
+  version: 0.2.1
 
 
 copyright: Copyright &copy; 2023 J.P. Esparza.

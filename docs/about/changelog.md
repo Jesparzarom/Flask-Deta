@@ -5,8 +5,21 @@ _All notable changes to this project will be documented in this file._
 _The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)._
 
+---
+
 ## Unreleased
 - none
+
+---
+
+## Version 0.2.1
+<small>Release in 2023-08-22</small>
+
+**Changed**
+- Version specifications of `flask>=2.3`, `deta>=1.2` dependencies in pyproject.toml
+- Python version specification from 3.8 to 3.10 in pyproject.toml
+
+---
 
 ## Version 0.2.0
 <small>Release in 2023-08-22</small>
@@ -38,6 +51,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 **Updated**
 
 - Updated the documentation.
+
+---
 
 ## Version 0.1.1
 <small>Release in 2023-08-09</small>

@@ -4,13 +4,16 @@ build-backend = "hatchling.build"
 
 [project]
 name = "flask-deta"
-version = "0.2.0"
+version = "0.2.1"
 description = "A Python library for seamless integration with DetaSpace in Flask"
 authors = [{ name = "J.P. Esparza" }]
 maintainers = [{ name = "J.P. Esparza" }]
 readme = "README.md"
-requires-python = ">=3.8"
-dependencies = ["Flask", "deta"]
+requires-python = ">=3.10"
+dependencies = [
+  "Flask>=2.3", 
+  "deta>=1.2"
+]
 keywords = [
   "Flask",
   "Flask Package",

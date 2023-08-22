@@ -1,5 +1,5 @@
-## Version 0.2.0
-> ⚠️ This is the initial version 0.2.0 and is currently in the alpha stage. It is not recommended for production use.
+## Version 0.2.1
+> ⚠️ This is the initial version 0.2.1 and is currently in the alpha stage. It is not recommended for production use.
 
 ---
 
