@@ -1,3 +1,13 @@
+# flask-Deta Readme
+[![Documentation Status](https://readthedocs.org/projects/flask-deta/badge/?version=latest)](https://flask-deta.readthedocs.io/en/latest/?badge=latest)
+[![PyPI Version](https://img.shields.io/pypi/v/flask-deta)](https://pypi.org/project/flask-deta/)
+[![License](https://img.shields.io/pypi/l/Flask-Deta)](https://pypi.org/project/Flask-Deta/)
+[![Downloads](https://static.pepy.tech/badge/flask-deta)](https://pepy.tech/project/flask-deta)
+[![Dependencies](https://img.shields.io/librariesio/release/pypi/flask-deta)](https://libraries.io/pypi/flask-deta)
+[![GitHub Issues](https://img.shields.io/github/issues/Jesparzarom/Flask-Deta)](https://github.com/Jesparzarom/Flask-Deta/issues)
+
+
+
 ## Version 0.2.1
 > ⚠️ This is the initial version 0.2.1 and is currently in the alpha stage. It is not recommended for production use.
 
@@ -6,6 +16,7 @@
 **Welcome to FlaskDeta README!**
 
 **For a more detailed use, I recommend you to visit the [Flask-Deta documentation](https://flask-deta.readthedocs.io/en/latest/)**
+See [flask-deta on pypi](https://pypi.org/project/flask-deta/)
 
 Flask-Deta is a Python library that simplifies the integration of your [DetaSpace](https://deta.space/) collection of database and/or drive files with [Flask](https://flask.palletsprojects.com/en/2.3.x/) framework. 
 
@@ -19,6 +30,7 @@ In this documents, we will provide you with an in-depth overview of Flask-Deta a
 - To learn more about Flask visit the [Flask documentation](https://flask.palletsprojects.com/en/2.3.x/).
 
 # Install
+Installation through pip. See [flask-deta on pypi](https://pypi.org/project/flask-deta/)
 ```shell
 pip install flask-deta
 ```
