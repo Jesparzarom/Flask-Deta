@@ -1,6 +1,5 @@
 
-Represents a DetaSpace Drive that allows you to store and manage files.
-## *class* DetaDrive
+## *class* DetaDrive [DEPRECATED]
 > `flask_deta.DetaDrive(app : Flask, project_key: str, name: str, host: Optional[str])`
 
 - Attributes:
