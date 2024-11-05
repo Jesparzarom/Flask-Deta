@@ -1,7 +1,29 @@
-# OVERVIEW
+## OVERVIEW
 <a href="/">
     <img src="images/flaskdeta.png" width=100%/>
 </a>
+
+
+# ⚠️ Deprecation Notice
+
+**Important:** This project is now deprecated and no longer maintained due to the discontinuation of Deta Base, which is a critical dependency.
+
+### Reason for Deprecation
+Deta, the platform supporting the database used by this module, has announced that they will cease operations for their services as of **October 17, 2024**. Starting from that date, all hosted apps, installed apps, horizons, websites, and data will be removed.
+
+> "Space will keep running for 45 days until October 17, 2024. We will then start removing all apps (hosted or installed), horizons, websites and data.
+>
+> You can continue to login until sunset. We've built tools to export your data (and code for developers)."
+
+For more details on Deta's announcement, please refer to their [official statement](https://flask-deta.readthedocs.io/en/stable/).
+
+### Recommended Actions
+- **Backup your data**: Ensure you have exported any necessary data and code before October 17, 2024, using the tools provided by Deta.
+- **Explore Alternatives**: Consider migrating to other database solutions that align with your project's needs.
+
+We appreciate your understanding and thank you for your support.
+
+---
 
 ## Version 0.2.1
 > ⚠️ This is the initial version 0.2.1 and is currently in the alpha development stage. It is not recommended for production use.
@@ -9,6 +31,7 @@
 ---
 
 **Welcome to FlaskDeta Docs!**
+[DEPRECATED]
 
 Flask-Deta is a Python library that simplifies the integration of your [DetaSpace](https://deta.space/) collection of database and/or drive files with [Flask](https://flask.palletsprojects.com/en/2.3.x/) framework. 
 
@@ -26,10 +49,10 @@ In this documents, we will provide you with an in-depth overview of Flask-Deta a
 For comprehensive information on how to use Flask-Deta, please refer to our User Guide, which covers the following topics: 
 
 - #####  Getting started
-    * [Installation](./guide/install.md)
-    * [Configurations](./guide/config.md)
-    * [Quickstart](./guide/start.md)
-- ##### Api reference 
+    * [Installation (DEPRECATED)](./guide/install.md)
+    * [Configurations (DEPRECATED)](./guide/config.md)
+    * [Quickstart (DEPRECATED)](./guide/start.md)
+- ##### Api reference (DEPRECATED)
     * [DetaBase](./detabase/base.md)
     * [DetaDrive](./detadrive/drive.md)
 - ##### About
