@@ -1,5 +1,5 @@
 
-## *class* DetaBase
+## *class* DetaBase [DEPRECATED]
 > `flask_deta.DetaBase(app : Flask, project_key: str, name: str, host: Optional[str])`
 
 - Attributes:
