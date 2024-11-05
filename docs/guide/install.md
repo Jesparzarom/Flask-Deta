@@ -1,5 +1,10 @@
-##### Installing via Pip
-To incorporate Flask-Deta into your Python project, a straightforward method involves its installation through pip.
+##### Installing via Pip [DEPRECATED]
+
+> ⚠ **Deprecation Notice:** Due to the discontinuation of the Deta platform, `flask-deta` is no longer functional and will no longer receive updates. Installation and usage are no longer recommended. Deta has announced that all services, including data storage, will cease by **October 17, 2024**. Please export any necessary data before this date.
+
+---
+
+To previously incorporate Flask-Deta into your Python project, it was installed with pip:
 
 ```shell
 pip install flask-deta
@@ -11,12 +16,11 @@ Once the installation process concludes, you'll be all set to seamlessly integra
 
 ##### Dependencies
 
-To ensure the proper functioning of your package, it will automatically install the following dependencies if they are not already present:
+The following dependencies were previously required for flask-deta, which would be installed automatically if missing:
 
 - [x] Flask
 - [x] deta
 
 ---
 
-
-> 🥳 Happy coding with Flask-Deta!
+🛑 Note: This package is now deprecated and no longer supported. Please consider alternative solutions for any ongoing or future projects.
