@@ -1,4 +1,25 @@
-# flask-Deta Readme
+# ⚠️ Deprecation Notice
+
+**Important:** This project is now deprecated and no longer maintained due to the discontinuation of Deta Base, which is a critical dependency.
+
+### Reason for Deprecation
+Deta, the platform supporting the database used by this module, has announced that they will cease operations for their services as of **October 17, 2024**. Starting from that date, all hosted apps, installed apps, horizons, websites, and data will be removed.
+
+> "Space will keep running for 45 days until October 17, 2024. We will then start removing all apps (hosted or installed), horizons, websites and data.
+>
+> You can continue to login until sunset. We've built tools to export your data (and code for developers)."
+
+For more details on Deta's announcement, please refer to their [official statement](https://flask-deta.readthedocs.io/en/stable/).
+
+### Recommended Actions
+- **Backup your data**: Ensure you have exported any necessary data and code before October 17, 2024, using the tools provided by Deta.
+- **Explore Alternatives**: Consider migrating to other database solutions that align with your project's needs.
+
+We appreciate your understanding and thank you for your support.
+
+---
+
+# flask-Deta Readme [Archive]
 [![Documentation Status](https://readthedocs.org/projects/flask-deta/badge/?version=latest)](https://flask-deta.readthedocs.io/en/latest/?badge=latest)
 [![PyPI Version](https://img.shields.io/pypi/v/flask-deta)](https://pypi.org/project/flask-deta/)
 [![License](https://img.shields.io/pypi/l/Flask-Deta)](https://pypi.org/project/Flask-Deta/)
@@ -256,8 +277,15 @@ def all_files():
 base.init_app(app)
 drive.init_app(app)
 
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 ```
+
+
+
+---
 
 Visit the [Flask-Deta documentation](https://flask-deta.readthedocs.io/en/latest/)
