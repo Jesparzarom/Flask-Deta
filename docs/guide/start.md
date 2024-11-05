@@ -1,5 +1,5 @@
 
-# Quickstart
+# Quickstart [DEPRECATED]
 
 1. **Install** Flask-Deta. See more in [installation](./install.md)
 
@@ -9,10 +9,13 @@
 
 4. **Create DetaBase and DetaDrive Instances:** You can easily create instances of DetaBase and DetaDrive by using your Flask app as an argument, either directly or by utilizing the `init_app(app)` method.
 
-**Install**
+**Install [DEPRECATED]**
+🛑 Previously, it was installed with:
 ```shell
 pip install flask-deta
 ```
+❌ But it will no longer work.
+
 
 ## DetaBase
 ```python
